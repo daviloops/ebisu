@@ -6,7 +6,9 @@ import { web3Accounts, web3Enable } from '@polkadot/extension-dapp'
 import { keyring as Keyring } from '@polkadot/ui-keyring'
 import { isTestChain } from '@polkadot/util'
 import { TypeRegistry } from '@polkadot/types/create'
+// import { ContractPromise } from "@polkadot/api-contract";
 
+// import metadata from '../../metadata.json'
 import config from '../config'
 
 const parsedQuery = new URLSearchParams(window.location.search)
@@ -66,6 +68,7 @@ const connect = (state, dispatch) => {
 
   console.log(`Connected socket: ${socket}`)
   const provider = new WsProvider(socket)
+  // const _api = ApiPromise.create({ provider, rpc: jsonrpc });
   const _api = new ApiPromise({ provider, rpc: jsonrpc })
 
   // Set listeners for disconnection and reconnection event.
@@ -140,10 +143,19 @@ const SubstrateContextProvider = props => {
 
   const [state, dispatch] = useReducer(reducer, initialState)
   connect(state, dispatch)
-
+  
   useEffect(() => {
+    // const { apiState, keyringState, api } = state
     const { apiState, keyringState } = state
     if (apiState === 'READY' && !keyringState && !keyringLoadAll) {
+      console.log('ya conecto')
+
+      // const CONTRACT_ABI = metadata
+      // const CONTRACT_ADDRESS = 
+
+      // const contract = new ContractPromise(api, CONTRACT_ABI, CONTRACT_ADDRESS);
+      console.log('ya contrato')
+
       keyringLoadAll = true
       loadAccounts(state, dispatch)
     }

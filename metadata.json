@@ -1,0 +1,1646 @@
+{
+  "source": {
+    "hash": "0x9abe2e759a77db76ffef6df51eef53df55d92b28eafc1da4ab769495c5fce102",
+    "language": "ink! 3.0.1",
+    "compiler": "rustc 1.63.0-nightly"
+  },
+  "contract": {
+    "name": "ebisu",
+    "version": "0.1.0",
+    "authors": [
+      "[Pramit Gaha] <[pramitgaha21@gmail.com]>"
+    ]
+  },
+  "V3": {
+    "spec": {
+      "constructors": [
+        {
+          "args": [
+            {
+              "label": "fee",
+              "type": {
+                "displayName": [
+                  "u64"
+                ],
+                "type": 3
+              }
+            }
+          ],
+          "docs": [],
+          "label": "init",
+          "payable": false,
+          "selector": "0x44d6441f"
+        }
+      ],
+      "docs": [],
+      "events": [
+        {
+          "args": [
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "created_by",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "nft",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "token_id",
+              "type": {
+                "displayName": [
+                  "Id"
+                ],
+                "type": 6
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "amount_asked",
+              "type": {
+                "displayName": [
+                  "Balance"
+                ],
+                "type": 9
+              }
+            }
+          ],
+          "docs": [],
+          "label": "OrderCreated"
+        },
+        {
+          "args": [
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "bid_by",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "nft",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "token_id",
+              "type": {
+                "displayName": [
+                  "Id"
+                ],
+                "type": 6
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "amount",
+              "type": {
+                "displayName": [
+                  "Balance"
+                ],
+                "type": 9
+              }
+            }
+          ],
+          "docs": [],
+          "label": "Bid"
+        },
+        {
+          "args": [
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "cancelled_by",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "nft",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "token_id",
+              "type": {
+                "displayName": [
+                  "Id"
+                ],
+                "type": 6
+              }
+            }
+          ],
+          "docs": [],
+          "label": "OrderCancelled"
+        },
+        {
+          "args": [
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "lender",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "borrower",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "borrowed_amount",
+              "type": {
+                "displayName": [
+                  "Balance"
+                ],
+                "type": 9
+              }
+            }
+          ],
+          "docs": [],
+          "label": "OrderAccepted"
+        },
+        {
+          "args": [
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "deposited_by",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "nft",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "token_id",
+              "type": {
+                "displayName": [
+                  "Id"
+                ],
+                "type": 6
+              }
+            }
+          ],
+          "docs": [],
+          "label": "NftDeposited"
+        },
+        {
+          "args": [
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "withdraw_by",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "nft",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "token_id",
+              "type": {
+                "displayName": [
+                  "Id"
+                ],
+                "type": 6
+              }
+            }
+          ],
+          "docs": [],
+          "label": "NftWithdrawal"
+        },
+        {
+          "args": [
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "deposited_by",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "amount",
+              "type": {
+                "displayName": [
+                  "Balance"
+                ],
+                "type": 9
+              }
+            }
+          ],
+          "docs": [],
+          "label": "DotDeposited"
+        },
+        {
+          "args": [
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "withdraw_by",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "amount",
+              "type": {
+                "displayName": [
+                  "Balance"
+                ],
+                "type": 9
+              }
+            }
+          ],
+          "docs": [],
+          "label": "DotWithdrawal"
+        },
+        {
+          "args": [
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "paid_by",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "paid_to",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "amount",
+              "type": {
+                "displayName": [
+                  "Balance"
+                ],
+                "type": 9
+              }
+            }
+          ],
+          "docs": [],
+          "label": "LoanPaid"
+        },
+        {
+          "args": [
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "withdraw_by",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "nft",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "docs": [],
+              "indexed": false,
+              "label": "token_id",
+              "type": {
+                "displayName": [
+                  "Id"
+                ],
+                "type": 6
+              }
+            }
+          ],
+          "docs": [],
+          "label": "CollateralWithdrawal"
+        }
+      ],
+      "messages": [
+        {
+          "args": [
+            {
+              "label": "new_fee",
+              "type": {
+                "displayName": [
+                  "u64"
+                ],
+                "type": 3
+              }
+            }
+          ],
+          "docs": [],
+          "label": "change_fee",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "Result"
+            ],
+            "type": 22
+          },
+          "selector": "0x4882700b"
+        },
+        {
+          "args": [
+            {
+              "label": "new_owner",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            }
+          ],
+          "docs": [],
+          "label": "change_owner",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "Result"
+            ],
+            "type": 22
+          },
+          "selector": "0x015eeeaf"
+        },
+        {
+          "args": [
+            {
+              "label": "nft_contract",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "label": "token_id",
+              "type": {
+                "displayName": [
+                  "Id"
+                ],
+                "type": 6
+              }
+            },
+            {
+              "label": "amount_asked",
+              "type": {
+                "displayName": [
+                  "Balance"
+                ],
+                "type": 9
+              }
+            },
+            {
+              "label": "interest_rate_asked",
+              "type": {
+                "displayName": [
+                  "u64"
+                ],
+                "type": 3
+              }
+            },
+            {
+              "label": "time_asked",
+              "type": {
+                "displayName": [
+                  "u64"
+                ],
+                "type": 3
+              }
+            }
+          ],
+          "docs": [],
+          "label": "create_order",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "Result"
+            ],
+            "type": 22
+          },
+          "selector": "0xe5e70b32"
+        },
+        {
+          "args": [
+            {
+              "label": "nft_contract",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "label": "token_id",
+              "type": {
+                "displayName": [
+                  "Id"
+                ],
+                "type": 6
+              }
+            },
+            {
+              "label": "amount_bid",
+              "type": {
+                "displayName": [
+                  "Balance"
+                ],
+                "type": 9
+              }
+            },
+            {
+              "label": "interest_rate_bid",
+              "type": {
+                "displayName": [
+                  "u64"
+                ],
+                "type": 3
+              }
+            }
+          ],
+          "docs": [],
+          "label": "create_bid",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "Result"
+            ],
+            "type": 22
+          },
+          "selector": "0x2c5108ec"
+        },
+        {
+          "args": [
+            {
+              "label": "nft_contract",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "label": "token_id",
+              "type": {
+                "displayName": [
+                  "Id"
+                ],
+                "type": 6
+              }
+            },
+            {
+              "label": "_accepted_bidder",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            }
+          ],
+          "docs": [],
+          "label": "accept_order",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "Result"
+            ],
+            "type": 22
+          },
+          "selector": "0xfd20fce8"
+        },
+        {
+          "args": [
+            {
+              "label": "nft_contract",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "label": "token_id",
+              "type": {
+                "displayName": [
+                  "Id"
+                ],
+                "type": 6
+              }
+            }
+          ],
+          "docs": [],
+          "label": "get_bidder_list",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "Result"
+            ],
+            "type": 27
+          },
+          "selector": "0xe48d58b7"
+        },
+        {
+          "args": [
+            {
+              "label": "nft_contract",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "label": "token_id",
+              "type": {
+                "displayName": [
+                  "Id"
+                ],
+                "type": 6
+              }
+            }
+          ],
+          "docs": [],
+          "label": "cancel_order",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "Result"
+            ],
+            "type": 22
+          },
+          "selector": "0xe90b7ff6"
+        },
+        {
+          "args": [
+            {
+              "label": "nft_contract",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "label": "token_id",
+              "type": {
+                "displayName": [
+                  "Id"
+                ],
+                "type": 6
+              }
+            }
+          ],
+          "docs": [],
+          "label": "deposit_nft",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "Result"
+            ],
+            "type": 22
+          },
+          "selector": "0x420e0f3f"
+        },
+        {
+          "args": [
+            {
+              "label": "nft_contract",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "label": "token_id",
+              "type": {
+                "displayName": [
+                  "Id"
+                ],
+                "type": 6
+              }
+            }
+          ],
+          "docs": [],
+          "label": "withdraw_nft",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "Result"
+            ],
+            "type": 22
+          },
+          "selector": "0x018d1025"
+        },
+        {
+          "args": [],
+          "docs": [],
+          "label": "deposit_dot",
+          "mutates": true,
+          "payable": true,
+          "returnType": {
+            "displayName": [
+              "Result"
+            ],
+            "type": 22
+          },
+          "selector": "0xfe4eecf1"
+        },
+        {
+          "args": [
+            {
+              "label": "amount",
+              "type": {
+                "displayName": [
+                  "Balance"
+                ],
+                "type": 9
+              }
+            }
+          ],
+          "docs": [],
+          "label": "withdraw_dot",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "Result"
+            ],
+            "type": 22
+          },
+          "selector": "0xf5a4f097"
+        },
+        {
+          "args": [],
+          "docs": [],
+          "label": "pay_loan",
+          "mutates": true,
+          "payable": true,
+          "returnType": {
+            "displayName": [
+              "Result"
+            ],
+            "type": 22
+          },
+          "selector": "0xe36ebe8c"
+        },
+        {
+          "args": [
+            {
+              "label": "borrower",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 0
+              }
+            }
+          ],
+          "docs": [],
+          "label": "get_collateral",
+          "mutates": true,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "Result"
+            ],
+            "type": 22
+          },
+          "selector": "0xf48343ad"
+        }
+      ]
+    },
+    "storage": {
+      "struct": {
+        "fields": [
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                "ty": 0
+              }
+            },
+            "name": "owner"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0100000000000000000000000000000000000000000000000000000000000000",
+                "ty": 3
+              }
+            },
+            "name": "fee"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0200000000000000000000000000000000000000000000000000000000000000",
+                "ty": 4
+              }
+            },
+            "name": "order"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0300000000000000000000000000000000000000000000000000000000000000",
+                "ty": 15
+              }
+            },
+            "name": "nft_vault"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0400000000000000000000000000000000000000000000000000000000000000",
+                "ty": 17
+              }
+            },
+            "name": "dot_vault"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0500000000000000000000000000000000000000000000000000000000000000",
+                "ty": 18
+              }
+            },
+            "name": "loan_info"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0600000000000000000000000000000000000000000000000000000000000000",
+                "ty": 20
+              }
+            },
+            "name": "collateral_vault"
+          }
+        ]
+      }
+    },
+    "types": [
+      {
+        "id": 0,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "type": 1,
+                  "typeName": "[u8; 32]"
+                }
+              ]
+            }
+          },
+          "path": [
+            "ink_env",
+            "types",
+            "AccountId"
+          ]
+        }
+      },
+      {
+        "id": 1,
+        "type": {
+          "def": {
+            "array": {
+              "len": 32,
+              "type": 2
+            }
+          }
+        }
+      },
+      {
+        "id": 2,
+        "type": {
+          "def": {
+            "primitive": "u8"
+          }
+        }
+      },
+      {
+        "id": 3,
+        "type": {
+          "def": {
+            "primitive": "u64"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "offset_key",
+                  "type": 14,
+                  "typeName": "Key"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "K",
+              "type": 5
+            },
+            {
+              "name": "V",
+              "type": 11
+            }
+          ],
+          "path": [
+            "ink_storage",
+            "lazy",
+            "mapping",
+            "Mapping"
+          ]
+        }
+      },
+      {
+        "id": 5,
+        "type": {
+          "def": {
+            "tuple": [
+              0,
+              6
+            ]
+          }
+        }
+      },
+      {
+        "id": 6,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "fields": [
+                    {
+                      "type": 2,
+                      "typeName": "u8"
+                    }
+                  ],
+                  "index": 0,
+                  "name": "U8"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 7,
+                      "typeName": "u16"
+                    }
+                  ],
+                  "index": 1,
+                  "name": "U16"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 8,
+                      "typeName": "u32"
+                    }
+                  ],
+                  "index": 2,
+                  "name": "U32"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 3,
+                      "typeName": "u64"
+                    }
+                  ],
+                  "index": 3,
+                  "name": "U64"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 9,
+                      "typeName": "u128"
+                    }
+                  ],
+                  "index": 4,
+                  "name": "U128"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 10,
+                      "typeName": "Vec<u8>"
+                    }
+                  ],
+                  "index": 5,
+                  "name": "Bytes"
+                }
+              ]
+            }
+          },
+          "path": [
+            "contracts",
+            "traits",
+            "psp34",
+            "psp34",
+            "Id"
+          ]
+        }
+      },
+      {
+        "id": 7,
+        "type": {
+          "def": {
+            "primitive": "u16"
+          }
+        }
+      },
+      {
+        "id": 8,
+        "type": {
+          "def": {
+            "primitive": "u32"
+          }
+        }
+      },
+      {
+        "id": 9,
+        "type": {
+          "def": {
+            "primitive": "u128"
+          }
+        }
+      },
+      {
+        "id": 10,
+        "type": {
+          "def": {
+            "sequence": {
+              "type": 2
+            }
+          }
+        }
+      },
+      {
+        "id": 11,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "owner",
+                  "type": 0,
+                  "typeName": "AccountId"
+                },
+                {
+                  "name": "amount_asked",
+                  "type": 9,
+                  "typeName": "Balance"
+                },
+                {
+                  "name": "interest_rate_asked",
+                  "type": 3,
+                  "typeName": "u64"
+                },
+                {
+                  "name": "time_asked",
+                  "type": 3,
+                  "typeName": "u64"
+                },
+                {
+                  "name": "bidder_list",
+                  "type": 12,
+                  "typeName": "Vec<(AccountId, Balance, u64)>"
+                }
+              ]
+            }
+          },
+          "path": [
+            "ebisu",
+            "ebisu",
+            "OrderInfo"
+          ]
+        }
+      },
+      {
+        "id": 12,
+        "type": {
+          "def": {
+            "sequence": {
+              "type": 13
+            }
+          }
+        }
+      },
+      {
+        "id": 13,
+        "type": {
+          "def": {
+            "tuple": [
+              0,
+              9,
+              3
+            ]
+          }
+        }
+      },
+      {
+        "id": 14,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "type": 1,
+                  "typeName": "[u8; 32]"
+                }
+              ]
+            }
+          },
+          "path": [
+            "ink_primitives",
+            "Key"
+          ]
+        }
+      },
+      {
+        "id": 15,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "offset_key",
+                  "type": 14,
+                  "typeName": "Key"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "K",
+              "type": 0
+            },
+            {
+              "name": "V",
+              "type": 16
+            }
+          ],
+          "path": [
+            "ink_storage",
+            "lazy",
+            "mapping",
+            "Mapping"
+          ]
+        }
+      },
+      {
+        "id": 16,
+        "type": {
+          "def": {
+            "sequence": {
+              "type": 5
+            }
+          }
+        }
+      },
+      {
+        "id": 17,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "offset_key",
+                  "type": 14,
+                  "typeName": "Key"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "K",
+              "type": 0
+            },
+            {
+              "name": "V",
+              "type": 9
+            }
+          ],
+          "path": [
+            "ink_storage",
+            "lazy",
+            "mapping",
+            "Mapping"
+          ]
+        }
+      },
+      {
+        "id": 18,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "offset_key",
+                  "type": 14,
+                  "typeName": "Key"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "K",
+              "type": 0
+            },
+            {
+              "name": "V",
+              "type": 19
+            }
+          ],
+          "path": [
+            "ink_storage",
+            "lazy",
+            "mapping",
+            "Mapping"
+          ]
+        }
+      },
+      {
+        "id": 19,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "lender",
+                  "type": 0,
+                  "typeName": "AccountId"
+                },
+                {
+                  "name": "nft_contract",
+                  "type": 0,
+                  "typeName": "AccountId"
+                },
+                {
+                  "name": "token_id",
+                  "type": 6,
+                  "typeName": "Id"
+                },
+                {
+                  "name": "borrowed_amount",
+                  "type": 9,
+                  "typeName": "Balance"
+                },
+                {
+                  "name": "interest_rate",
+                  "type": 3,
+                  "typeName": "u64"
+                },
+                {
+                  "name": "time",
+                  "type": 3,
+                  "typeName": "u64"
+                },
+                {
+                  "name": "loan_started_on",
+                  "type": 3,
+                  "typeName": "Timestamp"
+                },
+                {
+                  "name": "amount_to_be_paid",
+                  "type": 9,
+                  "typeName": "Balance"
+                },
+                {
+                  "name": "loan_ends_on",
+                  "type": 3,
+                  "typeName": "Timestamp"
+                }
+              ]
+            }
+          },
+          "path": [
+            "ebisu",
+            "ebisu",
+            "LoanInfo"
+          ]
+        }
+      },
+      {
+        "id": 20,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "offset_key",
+                  "type": 14,
+                  "typeName": "Key"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "K",
+              "type": 5
+            },
+            {
+              "name": "V",
+              "type": 21
+            }
+          ],
+          "path": [
+            "ink_storage",
+            "lazy",
+            "mapping",
+            "Mapping"
+          ]
+        }
+      },
+      {
+        "id": 21,
+        "type": {
+          "def": {
+            "tuple": [
+              0,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "id": 22,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "fields": [
+                    {
+                      "type": 23
+                    }
+                  ],
+                  "index": 0,
+                  "name": "Ok"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 24
+                    }
+                  ],
+                  "index": 1,
+                  "name": "Err"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "T",
+              "type": 23
+            },
+            {
+              "name": "E",
+              "type": 24
+            }
+          ],
+          "path": [
+            "Result"
+          ]
+        }
+      },
+      {
+        "id": 23,
+        "type": {
+          "def": {
+            "tuple": []
+          }
+        }
+      },
+      {
+        "id": 24,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "index": 0,
+                  "name": "FailedToFetchBidderList"
+                },
+                {
+                  "index": 1,
+                  "name": "NftNotDeposited"
+                },
+                {
+                  "index": 2,
+                  "name": "NotEnoughDot"
+                },
+                {
+                  "index": 3,
+                  "name": "DotNotDeposited"
+                },
+                {
+                  "index": 4,
+                  "name": "OrderAlreadyCreated"
+                },
+                {
+                  "index": 5,
+                  "name": "OrderNotFound"
+                },
+                {
+                  "index": 6,
+                  "name": "UnauthorizedAccess"
+                },
+                {
+                  "index": 7,
+                  "name": "BidderNotFound"
+                },
+                {
+                  "index": 8,
+                  "name": "FailedToDeposit"
+                },
+                {
+                  "index": 9,
+                  "name": "InvalidDate"
+                },
+                {
+                  "index": 10,
+                  "name": "InvalidInterestRate"
+                },
+                {
+                  "index": 11,
+                  "name": "TransferFailed"
+                },
+                {
+                  "index": 12,
+                  "name": "LoanNotCreated"
+                },
+                {
+                  "index": 13,
+                  "name": "LoanDueNotExceeded"
+                },
+                {
+                  "index": 14,
+                  "name": "PaymentDueExceeded"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 25,
+                      "typeName": "PSP34Error"
+                    }
+                  ],
+                  "index": 15,
+                  "name": "PSP34Error"
+                }
+              ]
+            }
+          },
+          "path": [
+            "ebisu",
+            "ebisu",
+            "ContractError"
+          ]
+        }
+      },
+      {
+        "id": 25,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "fields": [
+                    {
+                      "type": 26,
+                      "typeName": "String"
+                    }
+                  ],
+                  "index": 0,
+                  "name": "Custom"
+                },
+                {
+                  "index": 1,
+                  "name": "SelfApprove"
+                },
+                {
+                  "index": 2,
+                  "name": "NotApproved"
+                },
+                {
+                  "index": 3,
+                  "name": "TokenExists"
+                },
+                {
+                  "index": 4,
+                  "name": "TokenNotExists"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 26,
+                      "typeName": "String"
+                    }
+                  ],
+                  "index": 5,
+                  "name": "SafeTransferCheckFailed"
+                }
+              ]
+            }
+          },
+          "path": [
+            "contracts",
+            "traits",
+            "errors",
+            "psp34",
+            "PSP34Error"
+          ]
+        }
+      },
+      {
+        "id": 26,
+        "type": {
+          "def": {
+            "primitive": "str"
+          }
+        }
+      },
+      {
+        "id": 27,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "fields": [
+                    {
+                      "type": 12
+                    }
+                  ],
+                  "index": 0,
+                  "name": "Ok"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 24
+                    }
+                  ],
+                  "index": 1,
+                  "name": "Err"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "T",
+              "type": 12
+            },
+            {
+              "name": "E",
+              "type": 24
+            }
+          ],
+          "path": [
+            "Result"
+          ]
+        }
+      }
+    ]
+  }
+}
